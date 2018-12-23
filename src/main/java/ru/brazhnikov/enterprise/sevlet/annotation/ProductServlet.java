@@ -15,8 +15,14 @@ import java.io.IOException;
  * @author  Vasya Brazhnikov
  * @copyright Copyright (c) 2018, Vasya Brazhnikov
  */
-@WebServlet( urlPatterns = "/main")
+@WebServlet( urlPatterns = "/product")
 public class ProductServlet  extends HttpServlet {
+
+    /**
+     * @access private
+     * String title - титульный заголовок
+     */
+    private final static String title = "продукт";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

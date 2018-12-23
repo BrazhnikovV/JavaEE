@@ -17,8 +17,15 @@ import java.io.IOException;
  */
 @WebServlet( urlPatterns = "/main")
 public class MainServlet  extends HttpServlet {
+
+    /**
+     * @access private
+     * String title - титульный заголовок
+     */
+    private final static String title = "Главная станица";
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("MainServlet => главная тсраница");
+        req.getRequestDispatcher("/WEB-INF/views/layout.html" ).forward( req, resp );
     }
 }
