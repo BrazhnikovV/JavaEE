@@ -1,4 +1,4 @@
-package ru.brazhnikov.enterprise.sevlet.annotation;
+package ru.brazhnikov.enterprise.sevlet.error;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * ErrorServlet - сервлет для работы со страницей заказа
+ * ErrorServlet - сервлет для работы со страницей ошибка
  *
  * @version 1.0.1
- * @package ru.brazhnikov.enterprise.sevlet.annotation
+ * @package ru.brazhnikov.enterprise.sevlet.error
  * @author  Vasya Brazhnikov
  * @copyright Copyright (c) 2018, Vasya Brazhnikov
  */
