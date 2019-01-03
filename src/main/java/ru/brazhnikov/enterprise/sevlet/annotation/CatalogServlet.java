@@ -26,6 +26,6 @@ public class CatalogServlet  extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("CatalogServlet => страница каталога");
+        req.getRequestDispatcher("/WEB-INF/views/catalog/index.jsp" ).forward( req, resp );
     }
 }

@@ -15,7 +15,7 @@ import java.io.IOException;
  * @author  Vasya Brazhnikov
  * @copyright Copyright (c) 2018, Vasya Brazhnikov
  */
-@WebServlet( urlPatterns = "/main")
+@WebServlet( urlPatterns = "/")
 public class MainServlet  extends HttpServlet {
 
     /**
@@ -26,6 +26,6 @@ public class MainServlet  extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/layout.html" ).forward( req, resp );
+        req.getRequestDispatcher("/WEB-INF/views/layout.jsp" ).forward( req, resp );
     }
 }

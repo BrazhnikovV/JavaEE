@@ -26,7 +26,7 @@ public class OrderServlet  extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("OrderServlet => страница заказа");
+        req.getRequestDispatcher("/WEB-INF/views/layout.jsp" ).forward( req, resp );
     }
 }
 
