@@ -15,7 +15,7 @@ import java.io.IOException;
  * @author  Vasya Brazhnikov
  * @copyright Copyright (c) 2018, Vasya Brazhnikov
  */
-@WebServlet( urlPatterns = "/")
+@WebServlet( urlPatterns = "/main")
 public class MainServlet  extends HttpServlet {
 
     /**
