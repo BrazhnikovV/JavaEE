@@ -15,6 +15,8 @@
 <body>
 <div class="container-fluid">
     <jsp:include page="./menu/main-top-menu.jsp" />
+    <% final Object title =  request.getAttribute( "title" ); %>
+    <h1><%=title%></h1>
 </div>
 <jsp:include page="./footer/main-footer.jsp" />
 </body>

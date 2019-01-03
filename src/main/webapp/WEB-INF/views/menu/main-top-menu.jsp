@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                                <a class="nav-link" href="/example">Главная</a>
+                                <a class="nav-link" href="main">Главная</a>
                         </li>
                         <li class="nav-item">
                                 <a class="nav-link" href="catalog">Каталог</a>
@@ -18,6 +18,9 @@
                         </li>
                         <li class="nav-item">
                                 <a class="nav-link" href="cart">Корзина</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="about">О компании</a>
                         </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">

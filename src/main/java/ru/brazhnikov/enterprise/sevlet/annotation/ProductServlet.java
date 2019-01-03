@@ -26,6 +26,7 @@ public class ProductServlet  extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute( "title", title);
         resp.getWriter().println("CatalogServlet => страница продукта");
     }
 }
