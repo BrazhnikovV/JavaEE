@@ -29,6 +29,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
                     </tr>
@@ -38,6 +39,7 @@
                     <% for ( final Product product : products ) { %>
                         <tr>
                             <td scope="row"><%= index %></td>
+                            <td><%= product.getId() %></td>
                             <td><%= product.getName() %></td>
                             <td><%= product.getDescription() %></td>
                         </tr>
