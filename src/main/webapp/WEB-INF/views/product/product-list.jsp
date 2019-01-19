@@ -43,9 +43,15 @@
                             <td><%= product.getName() %></td>
                             <td><%= product.getDescription() %></td>
                         </tr>
+                        <% index++; %>
                     <% } %>
                 </tbody>
             </table>
+        </div>
+        <div class="col-md-12">
+            <form action="product-create">
+                <button type="submit" class="btn btn-primary">Create product</button>
+            </form>
         </div>
     </div>
 </div>

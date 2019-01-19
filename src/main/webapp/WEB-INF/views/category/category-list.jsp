@@ -32,6 +32,9 @@
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <% int index = 1; %>
@@ -42,10 +45,18 @@
                             <td><%= category.getId() %></td>
                             <td><%= category.getName() %></td>
                             <td><%= category.getDescription() %></td>
+                            <td><a href="category-edit?id=<%= category.getId() %>">edit</a></td>
+                            <td><a href="category-delete?id=<%= category.getId() %>">delete</a></td>
                         </tr>
+                        <% index++; %>
                     <% } %>
                 </tbody>
             </table>
+        </div>
+        <div class="col-md-12">
+            <form action="category-create">
+                <button type="submit" class="btn btn-primary">Create category</button>
+            </form>
         </div>
     </div>
 </div>
