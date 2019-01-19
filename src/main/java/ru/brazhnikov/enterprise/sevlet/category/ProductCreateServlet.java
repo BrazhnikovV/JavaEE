@@ -1,6 +1,7 @@
 package ru.brazhnikov.enterprise.sevlet.category;
 
-import ru.brazhnikov.enterprise.api.CategoryRepository;
+import ru.brazhnikov.enterprise.api.ProductRepository;
+import ru.brazhnikov.enterprise.entity.Product;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -26,11 +27,13 @@ public class ProductCreateServlet extends HttpServlet {
      * CategoryRepository categoryRepository -
      */
     @Inject
-    private CategoryRepository categoryRepository;
+    private ProductRepository productRepository;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //req.setAttribute( "title", title);
-        resp.getWriter().println("CatalogServlet => страница продукта");
+
+        final Product product = new Product( "" + System.currentTimeMillis() );
+        this.productRepository.merge( product );
+        resp.sendRedirect( "product-list" );
     }
 }

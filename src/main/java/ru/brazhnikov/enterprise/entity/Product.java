@@ -26,4 +26,14 @@ public class Product extends AbstractEntity {
     public String getId() {
         return this.id;
     }
+
+    @Nullable
+    public String getName() {
+        return name;
+    }
+
+    @Nullable
+    public String getDescription() {
+        return description;
+    }
 }

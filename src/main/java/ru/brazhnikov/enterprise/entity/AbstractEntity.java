@@ -1,6 +1,5 @@
 package ru.brazhnikov.enterprise.entity;
 
-
 import lombok.Data;
 import java.util.UUID;
 import org.jetbrains.annotations.Nullable;

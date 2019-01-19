@@ -5,13 +5,16 @@ import org.jetbrains.annotations.Nullable;
 import ru.brazhnikov.enterprise.api.ProductRepository;
 import ru.brazhnikov.enterprise.entity.Product;
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import java.util.*;
 
-
+@ApplicationScoped
 public class ProductRepositoryBean implements ProductRepository {
 
     private Map<String, Product> products = new LinkedHashMap<>();
 
+    @PostConstruct
     private void init () {
         this.merge( new Product( "english-premier-league" ) );
     }
