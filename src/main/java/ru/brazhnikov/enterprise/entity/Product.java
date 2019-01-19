@@ -36,4 +36,12 @@ public class Product extends AbstractEntity {
     public String getDescription() {
         return description;
     }
+
+    public void setName(@Nullable String name) {
+        this.name = name;
+    }
+
+    public void setDescription(@Nullable String description) {
+        this.description = description;
+    }
 }

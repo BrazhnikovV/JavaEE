@@ -34,7 +34,6 @@
                         <th scope="col">Description</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <% int index = 1; %>

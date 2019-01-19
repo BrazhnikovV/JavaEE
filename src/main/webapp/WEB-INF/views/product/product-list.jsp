@@ -32,6 +32,8 @@
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <% int index = 1; %>
@@ -42,6 +44,8 @@
                             <td><%= product.getId() %></td>
                             <td><%= product.getName() %></td>
                             <td><%= product.getDescription() %></td>
+                            <td><a href="product-edit?id=<%= product.getId() %>">edit</a></td>
+                            <td><a href="product-delete?id=<%= product.getId() %>">delete</a></td>
                         </tr>
                         <% index++; %>
                     <% } %>
