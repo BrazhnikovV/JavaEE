@@ -4,13 +4,24 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.brazhnikov.enterprise.api.CategoryRepository;
 import ru.brazhnikov.enterprise.entity.Category;
+
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import java.util.*;
 
-
+@ApplicationScoped
 public class CategoryRepositoryBean implements CategoryRepository {
 
+    /**
+     * @access private
+     * Map<String, Category> categories - мапа для хранения категорий
+     */
     private Map<String, Category> categories = new LinkedHashMap<>();
 
+    /**
+     * init -
+     */
+    @PostConstruct
     private void init () {
         this.merge( new Category( "english-premier-league" ) );
     }
