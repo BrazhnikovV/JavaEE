@@ -1,9 +1,7 @@
 package ru.brazhnikov.enterprise.sevlet.product;
 
-import ru.brazhnikov.enterprise.api.CategoryRepository;
 import ru.brazhnikov.enterprise.api.ProductRepository;
 import ru.brazhnikov.enterprise.config.FieldConf;
-import ru.brazhnikov.enterprise.entity.Category;
 import ru.brazhnikov.enterprise.entity.Product;
 
 import javax.inject.Inject;
@@ -59,5 +57,14 @@ public class ProductSaveServlet extends HttpServlet {
      */
     private void sendRedirectCategoryList(HttpServletResponse resp) throws IOException {
         resp.sendRedirect( "product-list" );
+    }
+
+    /**
+     * sendRedirectCategoryList - сделать редирект
+     * @param resp
+     * @throws IOException
+     */
+    private void sendRedirectCategoryNotValid(HttpServletResponse resp) throws IOException {
+        resp.sendRedirect( "product-edit-error" );
     }
 }

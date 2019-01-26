@@ -27,4 +27,10 @@ public final class FieldConf {
 
     @NotNull
     public static final String PRODUCT = "product";
+
+    @NotNull
+    public static final String NOT_VALID_NAME = "notValidateName";
+
+    @NotNull
+    public static final String NOT_VALID_DESCRIPTION = "notValidateDescription";
 }

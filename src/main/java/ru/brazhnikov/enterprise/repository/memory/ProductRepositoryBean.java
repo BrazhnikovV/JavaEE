@@ -1,4 +1,4 @@
-package ru.brazhnikov.enterprise.repository;
+package ru.brazhnikov.enterprise.repository.memory;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
