@@ -5,8 +5,11 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.Nullable;
 
+import javax.persistence.Entity;
+
 @Getter
 @Setter
+@Entity
 @NoArgsConstructor
 public class Category extends AbstractEntity {
 
