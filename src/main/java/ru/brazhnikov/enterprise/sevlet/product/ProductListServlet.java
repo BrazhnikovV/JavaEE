@@ -1,8 +1,8 @@
 package ru.brazhnikov.enterprise.sevlet.product;
 
-import ru.brazhnikov.enterprise.api.ProductRepository;
 import ru.brazhnikov.enterprise.config.FieldConf;
 import ru.brazhnikov.enterprise.entity.Product;
+import ru.brazhnikov.enterprise.repository.database.ProductRepositoryBean;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -29,7 +29,7 @@ public class ProductListServlet extends HttpServlet {
      * CategoryRepository categoryRepository -
      */
     @Inject
-    private ProductRepository productRepository;
+    private ProductRepositoryBean productRepositoryBean;
 
     /**
      * @access private
@@ -40,7 +40,7 @@ public class ProductListServlet extends HttpServlet {
     @Override
     protected void doGet( HttpServletRequest req, HttpServletResponse resp ) throws ServletException, IOException {
 
-        final Collection<Product> products = this.productRepository.findAll();
+        final Collection<Product> products = this.productRepositoryBean.findAll();
         req.setAttribute( "title", title );
         req.setAttribute( FieldConf.PRODUCTS, products );
         req.getRequestDispatcher( "/WEB-INF/views/product/product-list.jsp" ).forward( req, resp );

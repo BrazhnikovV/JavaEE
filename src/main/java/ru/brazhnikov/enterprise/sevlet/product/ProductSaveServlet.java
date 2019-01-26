@@ -1,8 +1,8 @@
 package ru.brazhnikov.enterprise.sevlet.product;
 
-import ru.brazhnikov.enterprise.api.ProductRepository;
 import ru.brazhnikov.enterprise.config.FieldConf;
 import ru.brazhnikov.enterprise.entity.Product;
+import ru.brazhnikov.enterprise.repository.database.ProductRepositoryBean;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ public class ProductSaveServlet extends HttpServlet {
      * CategoryRepository categoryRepository -
      */
     @Inject
-    private ProductRepository productRepository;
+    private ProductRepositoryBean productRepositoryBean;
 
     @Override
     protected void doPost( HttpServletRequest req, HttpServletResponse resp ) throws ServletException, IOException {
@@ -39,14 +39,14 @@ public class ProductSaveServlet extends HttpServlet {
             return;
         }
 
-        final Product product = this.productRepository.findById( id );
+        final Product product = this.productRepositoryBean.findById( id );
         if ( product == null ) {
             this.sendRedirectCategoryList( resp );
         }
 
         product.setName( req.getParameter( FieldConf.NAME ));
         product.setDescription( req.getParameter( FieldConf.DESCRIPTION ));
-        this.productRepository.merge( product );
+        this.productRepositoryBean.merge( product );
         this.sendRedirectCategoryList( resp );
     }
 

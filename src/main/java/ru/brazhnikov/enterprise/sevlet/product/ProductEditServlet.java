@@ -1,8 +1,8 @@
 package ru.brazhnikov.enterprise.sevlet.product;
 
-import ru.brazhnikov.enterprise.api.ProductRepository;
 import ru.brazhnikov.enterprise.config.FieldConf;
 import ru.brazhnikov.enterprise.entity.Product;
+import ru.brazhnikov.enterprise.repository.database.ProductRepositoryBean;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ public class ProductEditServlet extends HttpServlet {
      * CategoryRepository categoryRepository -
      */
     @Inject
-    private ProductRepository productRepository;
+    private ProductRepositoryBean productRepositoryBean;
 
     /**
      * @access private
@@ -40,7 +40,7 @@ public class ProductEditServlet extends HttpServlet {
     protected void doGet( HttpServletRequest req, HttpServletResponse resp ) throws ServletException, IOException {
 
         final String productId = req.getParameter( FieldConf.ID );
-        final Product product = this.productRepository.findById( productId );
+        final Product product = this.productRepositoryBean.findById( productId );
 
         if ( product == null ) {
             resp.sendError( HttpServletResponse.SC_NOT_FOUND );
