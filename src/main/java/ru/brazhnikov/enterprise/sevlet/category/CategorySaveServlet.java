@@ -1,8 +1,8 @@
 package ru.brazhnikov.enterprise.sevlet.category;
 
-import ru.brazhnikov.enterprise.api.CategoryRepository;
 import ru.brazhnikov.enterprise.config.FieldConf;
 import ru.brazhnikov.enterprise.entity.Category;
+import ru.brazhnikov.enterprise.repository.database.CategoryRepositoryBean;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ public class CategorySaveServlet extends HttpServlet {
      * CategoryRepository categoryRepository -
      */
     @Inject
-    private CategoryRepository categoryRepository;
+    private CategoryRepositoryBean categoryRepositoryBean;
 
     @Override
     protected void doPost( HttpServletRequest req, HttpServletResponse resp ) throws ServletException, IOException {
@@ -39,14 +39,14 @@ public class CategorySaveServlet extends HttpServlet {
             return;
         }
 
-        final Category category = this.categoryRepository.findById( id );
+        final Category category = this.categoryRepositoryBean.findById( id );
         if ( category == null ) {
             this.sendRedirectCategoryList( resp );
         }
 
         category.setName( req.getParameter( FieldConf.NAME ));
         category.setDescription( req.getParameter( FieldConf.DESCRIPTION ));
-        this.categoryRepository.merge( category );
+        this.categoryRepositoryBean.merge( category );
         this.sendRedirectCategoryList( resp );
     }
 

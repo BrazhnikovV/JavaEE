@@ -1,7 +1,8 @@
 package ru.brazhnikov.enterprise.sevlet.category;
 
-import ru.brazhnikov.enterprise.api.CategoryRepository;
+//import ru.brazhnikov.enterprise.api.CategoryRepository;
 import ru.brazhnikov.enterprise.entity.Category;
+import ru.brazhnikov.enterprise.repository.database.CategoryRepositoryBean;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -27,13 +28,13 @@ public class CategoryCreateServlet extends HttpServlet {
      * CategoryRepository categoryRepository -
      */
     @Inject
-    private CategoryRepository categoryRepository;
+    private CategoryRepositoryBean categoryRepositoryBean;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         final Category category = new Category( "" + System.currentTimeMillis() );
-        this.categoryRepository.merge( category );
+        this.categoryRepositoryBean.merge( category );
         resp.sendRedirect( "category-list" );
     }
 }

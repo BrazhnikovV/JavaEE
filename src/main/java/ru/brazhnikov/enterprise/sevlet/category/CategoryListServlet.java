@@ -1,8 +1,8 @@
 package ru.brazhnikov.enterprise.sevlet.category;
 
-import ru.brazhnikov.enterprise.api.CategoryRepository;
 import ru.brazhnikov.enterprise.config.FieldConf;
 import ru.brazhnikov.enterprise.entity.Category;
+import ru.brazhnikov.enterprise.repository.database.CategoryRepositoryBean;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -29,7 +29,7 @@ public class CategoryListServlet extends HttpServlet {
      * CategoryRepository categoryRepository -
      */
     @Inject
-    private CategoryRepository categoryRepository;
+    private CategoryRepositoryBean categoryRepositoryBean;
 
     /**
      * @access private
@@ -40,7 +40,7 @@ public class CategoryListServlet extends HttpServlet {
     @Override
     protected void doGet( HttpServletRequest req, HttpServletResponse resp ) throws ServletException, IOException {
 
-        final Collection<Category> categories = this.categoryRepository.findAll();
+        final Collection<Category> categories = this.categoryRepositoryBean.findAll();
         req.setAttribute( "title", title );
         req.setAttribute( FieldConf.CATEGORIES, categories );
         req.getRequestDispatcher( "/WEB-INF/views/category/category-list.jsp" ).forward( req, resp );

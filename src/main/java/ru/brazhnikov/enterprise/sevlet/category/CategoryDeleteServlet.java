@@ -1,8 +1,7 @@
 package ru.brazhnikov.enterprise.sevlet.category;
 
-import ru.brazhnikov.enterprise.api.CategoryRepository;
 import ru.brazhnikov.enterprise.config.FieldConf;
-import ru.brazhnikov.enterprise.entity.Category;
+import ru.brazhnikov.enterprise.repository.database.CategoryRepositoryBean;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -28,13 +27,13 @@ public class CategoryDeleteServlet extends HttpServlet {
      * CategoryRepository categoryRepository -
      */
     @Inject
-    private CategoryRepository categoryRepository;
+    private CategoryRepositoryBean categoryRepositoryBean;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         final String categoryId = req.getParameter( FieldConf.ID );
-        this.categoryRepository.removeById( categoryId );
+        this.categoryRepositoryBean.removeById( categoryId );
         resp.sendRedirect( "category-list" );
     }
 }
