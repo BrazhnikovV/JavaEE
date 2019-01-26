@@ -20,6 +20,9 @@ public class Product extends AbstractEntity {
     @Nullable
     private String description;
 
+    @Nullable
+    private String created = "";
+
     @ManyToOne
     private Category category;
 

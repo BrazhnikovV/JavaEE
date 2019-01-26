@@ -23,6 +23,8 @@ public class Category extends AbstractEntity {
     @Nullable
     private String description = "";
 
+    @Nullable String created = "";
+
     @OneToMany( mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true )
     private List<Product> products = new ArrayList<>();
 

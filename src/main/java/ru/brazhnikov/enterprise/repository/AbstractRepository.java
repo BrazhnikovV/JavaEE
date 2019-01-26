@@ -11,7 +11,7 @@ import java.util.List;
 public abstract class AbstractRepository {
 
     @PersistenceContext( name = "example-persistence-unit")
-    EntityManager em;
+    protected EntityManager em;
 
     @Nullable
     <T> T getEntity ( @NotNull final TypedQuery<T> query ) {
