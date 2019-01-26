@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.Nullable;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Getter
 @Setter
@@ -18,6 +19,9 @@ public class Product extends AbstractEntity {
 
     @Nullable
     private String description;
+
+    @ManyToOne
+    private Category category;
 
     public Product(@Nullable String name) {
         this.name = name;

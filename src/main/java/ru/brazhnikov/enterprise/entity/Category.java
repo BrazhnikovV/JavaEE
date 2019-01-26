@@ -5,7 +5,11 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.Nullable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,6 +22,9 @@ public class Category extends AbstractEntity {
 
     @Nullable
     private String description = "";
+
+    @OneToMany( mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true )
+    private List<Product> products = new ArrayList<>();
 
     public Category( @Nullable final String name) {
         this.name = name;
