@@ -24,12 +24,12 @@
 
             <h:form>
                 <p:outputPanel>
-                    <p:commandButton value="REFRESH" update="@form" ></p:commandButton>
+                    <p:commandButton value="REFRESH" update="@form"/>
                 </p:outputPanel>
                 <p:outputPanel>
-                    <p:commandButton value="PAGE" outcome="scope-mb-application">
-                        <f:param name="timestamp" value="#{scopeManagedBeanApplication.timestamp()}"></f:param>
-                    </p:commandButton>
+                    <p:button value="PAGE" outcome="scope-mb-application">
+                        <f:param name="timestamp" value="#{scopeManagedBeanApplication.timestamp()}"/>
+                    </p:button>
                 </p:outputPanel>
             </h:form>
         </h:panelGrid>
