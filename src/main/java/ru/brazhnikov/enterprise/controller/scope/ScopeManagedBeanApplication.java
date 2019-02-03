@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 @ApplicationScoped
-@URLMapping(id = "csope-mb-application", pattern = "/scope-mb-application", viewId = "/WEB-INF/faces/scope-mb-application.jsp")
+@URLMapping(id = "csope-mb-application", pattern = "/scope-mb-application", viewId = "/WEB-INF/faces/scope-mb-application.xhtml")
 public class ScopeManagedBeanApplication {
 
         public final String title = "ScopeManagedBeanApplication";

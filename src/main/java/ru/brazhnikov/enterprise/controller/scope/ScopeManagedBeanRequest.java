@@ -7,7 +7,7 @@ import com.ocpsoft.pretty.faces.annotation.URLMapping;
 
 @ManagedBean
 @RequestScoped
-@URLMapping(id = "csope-mb-request", pattern = "/scope-mb-request", viewId = "/WEB-INF/faces/scope-mb-request.jsp")
+@URLMapping(id = "csope-mb-request", pattern = "/scope-mb-request", viewId = "/WEB-INF/faces/scope-mb-request.xhtml")
 public class ScopeManagedBeanRequest {
 
     public final String title = "ScopeManagedBeanRequest";
