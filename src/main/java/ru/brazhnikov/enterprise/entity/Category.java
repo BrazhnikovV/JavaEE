@@ -23,7 +23,8 @@ public class Category extends AbstractEntity {
     @Nullable
     private String description = "";
 
-    @Nullable String created = "";
+    @Nullable
+    private String created = "";
 
     @OneToMany( mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true )
     private List<Product> products = new ArrayList<>();
@@ -32,6 +33,7 @@ public class Category extends AbstractEntity {
         this.name = name;
     }
 
+    @Nullable
     public String getId() {
         return this.id;
     }
@@ -44,6 +46,11 @@ public class Category extends AbstractEntity {
     @Nullable
     public String getDescription() {
         return description;
+    }
+
+    @Nullable
+    public String getCreated() {
+        return this.created;
     }
 
     public void setName(@Nullable String name) {

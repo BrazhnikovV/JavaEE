@@ -21,7 +21,7 @@ public class Product extends AbstractEntity {
     private String description;
 
     @Nullable
-    private String created = "";
+    private String created;
 
     @ManyToOne
     private Category category;
@@ -43,6 +43,12 @@ public class Product extends AbstractEntity {
     public String getDescription() {
         return description;
     }
+
+    @Nullable
+    public String getCreated() { return created; }
+
+    @Nullable
+    public Category getCategory() { return category; }
 
     public void setName(@Nullable String name) {
         this.name = name;
