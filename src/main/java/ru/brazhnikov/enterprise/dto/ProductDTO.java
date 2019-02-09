@@ -8,11 +8,12 @@ import ru.brazhnikov.enterprise.entity.Product;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+
 @Getter
 @Setter
 @XmlRootElement
 @NoArgsConstructor
-public class ProductDTO {
+public final class ProductDTO {
 
     @Nullable
     private String id;

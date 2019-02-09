@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Setter
 @XmlRootElement
 @NoArgsConstructor
-public class CategoryDTO {
+public final class CategoryDTO {
 
     @Nullable
     private String id;

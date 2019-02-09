@@ -58,6 +58,10 @@ public class ProductRepositoryBean extends AbstractRepository {
         this.em.remove( product );
     }
 
+    public Product create() {
+        return  new Product( "" );
+    }
+
     public void removeCategory(@Nullable Product product) {
         this.em.remove( product );
     }
